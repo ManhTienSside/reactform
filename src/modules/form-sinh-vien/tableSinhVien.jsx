@@ -6,11 +6,15 @@ class TableSinhVien extends Component {
     const {mangSinhVien} = this.props;
     return mangSinhVien.map((sinhVien,index)=>{
       return(
-        <tr key={index}>
+        <tr key={sinhVien.maSV}>
           <td>{sinhVien.maSV}</td>
           <td>{sinhVien.hoTen}</td>
           <td>{sinhVien.soDienThoai}</td>
           <td>{sinhVien.email}</td>
+          <td>
+            <button className='btn btn-danger mx-2'>Xoa</button>
+            <button className='btn btn-warning'>Edit</button>
+          </td>
         </tr>
       )
     })
@@ -25,6 +29,7 @@ class TableSinhVien extends Component {
               <th>Ho Va Ten</th>
               <th>So Dien thoai</th>
               <th>Email</th>
+              <th>Chuc Nang</th>
             </tr>
           </thead>
           <tbody>

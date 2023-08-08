@@ -1,3 +1,4 @@
+import { ReactForm } from "./formSinhVien.const";
 const stateDefault ={
     mangSinhVien:[{
         maSV:1,
@@ -8,9 +9,8 @@ const stateDefault ={
 };
 export const QuanLySinhVien = (state=stateDefault,action) =>{
     switch (action.type) {
-        case 'ThemSinhVien':{
-            const mangSVUpdate =[...state.mangSinhVien,action.sinhVien];
-            state.mangSinhVien = mangSVUpdate;
+        case ReactForm.DangKySinhVien:{
+            state.mangSinhVien = [...state.mangSinhVien, action.payload]
             return{...state};
         };
         default:{
